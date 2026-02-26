@@ -99,7 +99,7 @@ export default function MatchingForm({
                     timing: form.timing,
                     fund_type: form.type === "Sell" ? form.fund_type.join(", ") : null,
                     fund_count: form.type === "Sell" ? form.fund_count : null,
-                    fund_scale: form.scale ? form.fund_scale : form.fund_scale, // Same for both or only sell? PRD says fund_* is sell only, but scale doesn't explicitly. Oh, fund_scale is Sell only contextually? PRD says fund_scale. Let's send it anyway.
+                    fund_scale: form.fund_scale,
                     documents: documentsUrl,
                     extra_conditions: form.extra_conditions,
                     contact_name: form.contact_name,
