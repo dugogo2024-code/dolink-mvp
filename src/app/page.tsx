@@ -70,20 +70,20 @@ export default function Home() {
 
       <div className={`relative z-10 flex flex-col min-h-screen transition-opacity duration-1000 ${isBgLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <header className="w-full fixed top-0 z-40 glass-panel border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div className="font-bold text-xl tracking-tight">
+          <div className="max-w-7xl mx-auto px-6 py-4 sm:py-5 flex justify-between items-center">
+            <div className="font-bold text-lg sm:text-xl tracking-tight">
               link-assets.ai<span className="animate-blink ml-0.5">_</span>
             </div>
           </div>
         </header>
 
-        <main className="flex-grow flex flex-col justify-center items-center px-6 mt-20">
-          <div className="max-w-4xl text-center space-y-10">
-            <div className="inline-block px-4 py-1 border border-white/20 bg-black/40 text-[15px] tracking-[0.3em] uppercase">
+        <main className="flex-grow flex flex-col justify-center items-center px-6 pt-24 pb-12 sm:pt-32">
+          <div className="max-w-4xl text-center space-y-8 sm:space-y-10 mb-12 sm:mb-20">
+            <div className="inline-block px-3 py-1 sm:px-4 sm:py-1 border border-white/20 bg-black/40 text-[12px] sm:text-[15px] tracking-[0.2em] sm:tracking-[0.3em] uppercase">
               &gt; Let's Make Money... OK
             </div>
 
-            <h1 className="text-5xl sm:text-7xl font-bold tracking-tighter leading-none relative">
+            <h1 className="text-4xl sm:text-7xl font-bold tracking-tighter leading-tight sm:leading-none relative">
               <span className="opacity-0 pointer-events-none select-none" aria-hidden="true">
                 ASSETS.<br />INTELLIGENT.<br />CONNECTED.
               </span>
@@ -98,30 +98,31 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
-              심연의 우주 속에서 지능형 자산망이 실시간으로 연결합니다.<br />M&A 매칭 플랫폼 'DO link' MVP
+            <p className="text-xs sm:text-base text-gray-400 max-w-sm sm:max-w-xl mx-auto leading-relaxed px-4">
+              심연의 우주 속에서 지능형 자산망이 실시간으로 연결합니다.<br className="hidden sm:block" /> M&A 매칭 플랫폼 'DO link' MVP
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4 relative z-50">
               <button
                 onClick={() => setIsFormOpen(true)}
-                className="px-24 py-5 bg-white text-black text-xl font-extrabold uppercase hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 cursor-pointer rounded-sm"
+                className="px-12 sm:px-24 py-4 sm:py-5 bg-white text-black text-lg sm:text-xl font-extrabold uppercase hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 cursor-pointer rounded-sm"
               >
                 DO link
               </button>
             </div>
           </div>
 
-          <div className="absolute top-[80vh] w-full max-w-6xl px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Stats Section - Now in normal flow for better mobile compatibility */}
+          <div className="w-full max-w-6xl px-6 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-auto sm:mb-12">
             {[
               { l: 'Total_Assets', v: `+${totalAssets}` },
               { l: 'Buy_Side', v: '10' },
               { l: 'Sell_Side', v: '5' },
               { l: 'UPTIME', v: '99.99%' }
             ].map((s, i) => (
-              <div key={i} className="glass-panel p-4 border-l-2 border-l-white">
-                <div className="text-[15px] text-gray-500 mb-1">{s.l}</div>
-                <div className="text-xl font-bold">{s.v}</div>
+              <div key={i} className="glass-panel p-3 sm:p-4 border-l-2 border-l-white">
+                <div className="text-[12px] sm:text-[15px] text-gray-500 mb-1">{s.l}</div>
+                <div className="text-lg sm:text-xl font-bold">{s.v}</div>
               </div>
             ))}
           </div>
